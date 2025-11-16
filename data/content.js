@@ -114,28 +114,70 @@ export const constellationSkills = [
 
 export const projects = [
   {
-    title: "AI Document Hub",
-    summary: "Motor de lectura inteligente para informes y contratos en CAT Technologies.",
-    stack: ["Next.js", "Node.js", "MongoDB", "OpenAI"],
+    title: "Barbería PRO",
+    summary: "Panel de gestión de clientes y barberos con búsqueda avanzada, roles y fotos en la nube.",
+    stack: ["React", "TypeScript", "Vite", "TailwindCSS", "Firebase", "Cloudinary"],
     link: "https://www.linkedin.com/in/jesusgilgonzalez/",
+    preview: "/peluqueria.gif",
     details:
-      "Implementé un workflow que digitaliza documentos, ejecuta verificaciones automáticas y genera tableros personalizados para control de gestión.",
+      "Construí un panel de barbería con perfiles de barberos y clientes, agenda dinámica, búsqueda avanzada y carga de fotos en Cloudinary, todo respaldado con Firebase Auth, Firestore y roles personalizados.",
   },
   {
-    title: "Sales Automation Suite",
-    summary: "Ecosistema de automatización comercial para Cruz Roja Argentina.",
-    stack: ["React", "Firebase", "Airtable", "Apps Script"],
+    title: "Inventario Dietética",
+    summary: "Sistema web para controlar stock, costos y márgenes con cálculos automáticos y guardado en la nube.",
+    stack: ["React", "TypeScript", "Vite", "TailwindCSS", "Firebase", "React Hook Form"],
     link: "https://www.linkedin.com/in/jesusgilgonzalez/",
+    preview: "/Dietetica.gif",
     details:
-      "Diseñé pipelines de datos, dashboards operativos y reportes en tiempo real que conectan marketing digital con equipos de campo.",
+      "Desarrollé un panel para dietéticas con carga masiva de productos, cálculos de márgenes y reposición automática, autenticación con Firebase y formularios validados con React Hook Form. Incluye dashboards de costos y stocks críticos en tiempo real.",
   },
   {
-    title: "Engagement & Culture Ops",
-    summary: "Plataforma interna para comunicación y RRSS en Atento (AR/UR).",
-    stack: ["Next.js", "Notion API", "Tailwind", "Vercel"],
+    title: "Dante’s Inferno – Página temática",
+    summary: "Sitio estático inspirado en la Divina Comedia, con círculos del infierno ilustrados y narrativa visual.",
+    stack: ["HTML", "CSS", "JavaScript"],
     link: "https://www.linkedin.com/in/jesusgilgonzalez/",
+    preview: "/dantes.gif",
     details:
-      "Centralicé eventos, comunicados y seguimiento de stakeholders en un hub que redujo tiempos de coordinación en 30%.",
+      "Página de una sola sección que recorre los anillos del Infierno de Dante. Construido únicamente con HTML5, CSS3 y JavaScript ES6 para mantener el código liviano y fácil de desplegar.",
+    features: [
+      "Landing de una sola sección",
+      "Contenido literario y visual",
+      "Diseño oscuro ambiental",
+      "Código liviano sin dependencias",
+      "Ideal para presentaciones y lectura",
+    ],
+  },
+  {
+    title: "NextVideojuegos",
+    summary: "E-commerce de videojuegos con carrito, descuentos, carga dinámica y gestión de imágenes en la nube.",
+    stack: ["Next.js", "TailwindCSS", "Firebase", "Cloudinary", "SSR", "Vercel"],
+    link: "https://www.linkedin.com/in/jesusgilgonzalez/",
+    preview: "/Gamesphere.gif",
+    details:
+      "NextVideojuegos es una tienda de videojuegos construida con Next.js (app router) y TailwindCSS. Incluye carrito persistente, cálculo de descuentos, carga de productos desde Firestore y media optimizada con Cloudinary. Desplegado en Vercel con SSR/ISR para SEO y performance.",
+    features: [
+      "Catálogo de videojuegos dinámico",
+      "Carrito con descuentos y checkout",
+      "Imágenes servidas desde Cloudinary",
+      "Backend sin servidor usando Firebase",
+      "Rendering híbrido (SSR + ISR) optimizado",
+      "Deploy automático en Vercel (+150 deploys)",
+    ],
+  },
+  {
+    title: "Financial Tracker",
+    summary: "Dashboard financiero con sueldo diario disponible, objetivo de ahorro y proyecciones historicas.",
+    stack: ["Next.js", "Chart.js", "Estado Global", "Proyeccion", "Finanzas Personales"],
+    link: "https://www.linkedin.com/in/jesusgilgonzalez/",
+    preview: "/financial.gif",
+    details: "Financial Tracker es un sistema hecho en Next.js para visualizar cuanto podes gastar por dia sin romper tu objetivo mensual. Calcula proyecciones semanales, mensuales e historicas y muestra alertas segun tu ritmo de gasto.",
+    features: [
+      "Ingreso de sueldo y gastos del mes",
+      "Objetivo de ahorro configurable y saldo diario disponible",
+      "Proyecciones semanal, mensual e historica",
+      "Indicador visual de desvio",
+      "Graficos minimalistas con Chart.js",
+    ],
   },
 ];
 

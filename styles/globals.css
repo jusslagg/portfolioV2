@@ -128,6 +128,25 @@ body::before {
   .perspective {
     perspective: 800px;
   }
+
+  .tilt-card {
+    transform: perspective(1200px) rotateX(var(--tiltX, 0deg)) rotateY(var(--tiltY, 0deg));
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 25px 70px rgba(15, 0, 40, 0.35);
+  }
+
+  .tilt-card::after {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    pointer-events: none;
+  }
+
+  .tilt-card:hover {
+    box-shadow: 0 35px 110px rgba(69, 32, 140, 0.45);
+  }
 }
 
 @keyframes signal {

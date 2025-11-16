@@ -1,12 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 
 export const ProjectModal = ({ project, onClose }) => (
   <AnimatePresence>
     {project && (
       <motion.div
-        className="fixed inset-0 z-50 flex items-start justify-center bg-black/70 px-4 py-8 backdrop-blur md:items-center"
+        className="fixed inset-0 z-50 flex items-start justify-center bg-black/80 px-4 py-8 backdrop-blur-md md:items-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -16,7 +17,7 @@ export const ProjectModal = ({ project, onClose }) => (
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.85, opacity: 0 }}
           transition={{ type: "spring", stiffness: 180, damping: 20 }}
-          className="w-full max-w-2xl rounded-[32px] border border-white/15 bg-gradient-to-br from-purple-900/60 to-slate-900/60 p-6 shadow-glow sm:p-8"
+          className="w-full max-w-4xl rounded-[40px] border border-white/15 bg-gradient-to-br from-[#150622]/80 to-[#04000a]/90 p-8 shadow-[0_40px_140px_rgba(0,0,0,0.55)] sm:p-12"
           style={{ maxHeight: "80vh", overflowY: "auto" }}
         >
           <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
@@ -34,6 +35,26 @@ export const ProjectModal = ({ project, onClose }) => (
             </button>
           </div>
           <p className="mt-4 text-white/80">{project.details}</p>
+          {project.features?.length > 0 && (
+            <ul className="mt-4 list-disc space-y-1 text-left text-sm text-white/75 sm:text-base">
+              {project.features.map((feature) => (
+                <li key={feature}>{feature}</li>
+              ))}
+            </ul>
+          )}
+          {project.preview && (
+            <div className="relative mt-6 h-72 w-full overflow-hidden rounded-3xl border border-white/10 bg-black/20 sm:h-80">
+              <Image
+                src={project.preview}
+                alt={`Demo de ${project.title}`}
+                fill
+                className="object-cover object-center"
+                sizes="(min-width: 1024px) 520px, (min-width: 768px) 70vw, 100vw"
+                priority
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+            </div>
+          )}
           <div className="mt-6 flex flex-wrap gap-2">
             {project.stack.map((tech) => (
               <span
@@ -44,15 +65,14 @@ export const ProjectModal = ({ project, onClose }) => (
               </span>
             ))}
           </div>
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noreferrer"
+          <button
+            type="button"
+            onClick={onClose}
             data-cursor="focus"
-            className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:text-sky-200"
+            className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-2 text-sm font-semibold text-white/80 transition hover:border-white/60 hover:text-white"
           >
-            Abrir demo <span aria-hidden>-&gt;</span>
-          </a>
+            Cerrar <span aria-hidden>×</span>
+          </button>
         </motion.div>
       </motion.div>
     )}

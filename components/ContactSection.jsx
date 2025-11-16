@@ -1,7 +1,7 @@
 "use client";
 
+import { useCallback } from "react";
 import { motion } from "framer-motion";
-import { socialLinks } from "../data/content";
 
 const directContacts = [
   { label: "Teléfono", value: "+54 9 11 2386 1546", href: "tel:+5491123861546" },
@@ -15,6 +15,22 @@ const directContacts = [
 ];
 
 export const ContactSection = () => {
+  const handleTilt = useCallback((event) => {
+    const card = event.currentTarget;
+    const bounds = card.getBoundingClientRect();
+    const x = (event.clientX - bounds.left) / bounds.width;
+    const y = (event.clientY - bounds.top) / bounds.height;
+    const rotateY = (x - 0.5) * 16;
+    const rotateX = (0.5 - y) * 16;
+    card.style.setProperty("--tiltX", `${rotateX}deg`);
+    card.style.setProperty("--tiltY", `${rotateY}deg`);
+  }, []);
+
+  const resetTilt = useCallback((event) => {
+    event.currentTarget.style.setProperty("--tiltX", "0deg");
+    event.currentTarget.style.setProperty("--tiltY", "0deg");
+  }, []);
+
   const accentCards = [
     "from-[#5520a2]/70 via-[#1c0f36]/80 to-transparent",
     "from-[#0d1327]/80 via-[#1f1b4c]/75 to-transparent",
@@ -45,11 +61,13 @@ export const ContactSection = () => {
               target={external ? "_blank" : undefined}
               rel={external ? "noreferrer" : undefined}
               data-cursor="focus"
-              className={`group flex h-full flex-col items-center justify-center rounded-[32px] border border-white/15 bg-gradient-to-br ${accentCards[index]} px-6 py-10 text-white transition hover:border-white/60`}
+              className={`tilt-card group flex h-full flex-col items-center justify-center rounded-[32px] border border-white/15 bg-gradient-to-br ${accentCards[index]} px-6 py-10 text-white transition`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
+              onMouseMove={handleTilt}
+              onMouseLeave={resetTilt}
             >
               <span className="text-[11px] uppercase tracking-[0.5em] text-white/60">{label}</span>
               <span className="mt-4 text-lg font-semibold sm:text-xl">{value}</span>
