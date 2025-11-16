@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": "."
+  },
+  "include": [
+    "app/**/*",
+    "components/**/*",
+    "data/**/*",
+    "styles/**/*"
+  ]
+}

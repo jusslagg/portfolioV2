@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  color-scheme: dark;
+  --bg-primary: #000007;
+  --bg-secondary: #050013;
+  --glass: rgba(255, 255, 255, 0.04);
+  --text-primary: #f6f6ff;
+  --accent: #b48bff;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg-primary: #f3f1ff;
+  --bg-secondary: #ffffff;
+  --glass: rgba(10, 0, 20, 0.06);
+  --text-primary: #0d051f;
+  --accent: #5b21b6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  background-image: radial-gradient(circle at 50% 40%, rgba(38, 19, 93, 0.65), transparent 60%),
+    radial-gradient(circle at 30% 20%, rgba(70, 45, 140, 0.35), transparent 50%),
+    radial-gradient(circle at 70% 10%, rgba(11, 19, 71, 0.55), transparent 55%),
+    radial-gradient(circle at 65% 80%, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.9));
+  font-family: var(--font-space-grotesk), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+:root[data-theme="light"] body {
+  background-image: none;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cg fill='none' stroke='%235e2a9d' stroke-opacity='0.04'%3E%3Cpath d='M0 0h400v400H0z'/%3E%3Cpath d='M0 200h400M200 0v400'/%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.45;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.cosmic-grid {
+  background-image: radial-gradient(circle at center, rgba(151, 63, 255, 0.25), transparent 55%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 100% 100%, 120px 120px, 120px 120px;
+}
+
+.starfield {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 20% 20%, rgba(123, 97, 255, 0.35), transparent 45%),
+    radial-gradient(circle at 80% 0%, rgba(87, 214, 255, 0.25), transparent 35%),
+    radial-gradient(circle at 60% 70%, rgba(255, 108, 222, 0.2), transparent 55%);
+  filter: blur(0);
+  pointer-events: none;
+}
+
+.wormhole-glow {
+  position: absolute;
+  top: -160px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1200px;
+  height: 420px;
+  background: radial-gradient(circle at center, rgba(146, 111, 255, 0.9) 0%, rgba(35, 13, 63, 0.65) 40%, rgba(1, 0, 9, 0) 75%);
+  filter: blur(22px);
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.stardust {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Cg fill='%23fff'%3E%3Ccircle cx='20' cy='20' r='1' opacity='0.5'/%3E%3Ccircle cx='120' cy='40' r='0.7' opacity='0.3'/%3E%3Ccircle cx='260' cy='120' r='1.2' opacity='0.4'/%3E%3Ccircle cx='80' cy='200' r='0.6' opacity='0.4'/%3E%3Ccircle cx='200' cy='260' r='0.9' opacity='0.3'/%3E%3Ccircle cx='280' cy='60' r='0.5' opacity='0.5'/%3E%3Ccircle cx='40' cy='140' r='0.4' opacity='0.4'/%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.constellation-mesh {
+  background-image: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      60deg,
+      rgba(255, 255, 255, 0.08) 1px,
+      transparent 1px
+    );
+  background-size: 120px 120px;
+  mask-image: radial-gradient(circle at center, black, transparent 75%);
+}
+
+@layer components {
+  .glass-panel {
+    @apply rounded-3xl border border-white/10 bg-white/5 backdrop-blur-2xl;
+    box-shadow: 0 35px 120px rgba(82, 37, 154, 0.25);
+  }
+
+  .neon-text {
+    text-shadow: 0 0 18px rgba(138, 94, 255, 0.9);
+  }
+
+  html[data-theme="light"] .glass-panel {
+    @apply border-black/10 bg-white/70 text-neutral-900;
+  }
+
+  .signal-wave {
+    animation: signal 1.4s ease-out forwards;
+  }
+
+  .perspective {
+    perspective: 800px;
+  }
+}
+
+@keyframes signal {
+  0% {
+    transform: scale(0.4);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}

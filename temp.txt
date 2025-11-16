@@ -1,0 +1,122 @@
+export const navigationLinks = [
+  { href: "#hero", label: "Inicio" },
+  { href: "#about", label: "Perfil" },
+  { href: "#skills", label: "Skills" },
+  { href: "#projects", label: "Proyectos" },
+  { href: "#contact", label: "Contacto" },
+];
+
+export const heroBadges = [
+  { label: "Jesús Gil Gonzalez", gradient: "from-purple-400 to-fuchsia-400" },
+  { label: "Full-Stack \u00b7 Control de Gesti\u00f3n", gradient: "from-sky-400 to-indigo-400" },
+];
+
+export const heroOrbitIcons = [
+  { label: "React", symbol: "RE", color: "#7dd3fc" },
+  { label: "Next.js", symbol: "NX", color: "#ffffff" },
+  { label: "TypeScript", symbol: "TS", color: "#a5b4fc" },
+  { label: "Node.js", symbol: "ND", color: "#34d399" },
+  { label: "AWS", symbol: "AWS", color: "#facc15" },
+  { label: "Firebase", symbol: "FB", color: "#f97316" },
+  { label: "GitHub", symbol: "GH", color: "#e5e7eb" },
+];
+
+export const aboutHighlights = [
+  {
+    title: "Control de gesti\u00f3n",
+    copy: "Seguimiento de KPIs, prevenci\u00f3n de desviaciones y actualizaci\u00f3n de sistemas de n\u00f3mina en CAT Technologies.",
+  },
+  {
+    title: "Automatizaci\u00f3n comercial",
+    copy: "Dise\u00f1o y despliegue de flujos digitales, CRMs y bases de datos para Cruz Roja Argentina.",
+  },
+  {
+    title: "Liderazgo operativo",
+    copy: "Coordinaci\u00f3n de equipos de soporte y comunicaci\u00f3n interna para Atento en Argentina y Uruguay.",
+  },
+];
+
+export const constellationSkills = [
+  {
+    id: "fullstack",
+    title: "Frontend & Backend",
+    description: "React, Next.js, Node.js y arquitecturas escalables.",
+    position: [-1.5, 1.2, -0.4],
+  },
+  {
+    id: "ai",
+    title: "IA aplicada",
+    description: "Integraci\u00f3n de modelos para lectura y clasificaci\u00f3n documental.",
+    position: [1.1, 1.6, 0.3],
+  },
+  {
+    id: "automation",
+    title: "Automatizaci\u00f3n",
+    description: "Dashboards, workflows y orquestaci\u00f3n de datos para equipos comerciales.",
+    position: [1.8, -0.8, -0.6],
+  },
+  {
+    id: "analytics",
+    title: "Business Intelligence",
+    description: "Seguimiento de KPIs, reporte financiero y control operativo.",
+    position: [-1.9, -1.1, 0.2],
+  },
+  {
+    id: "dash",
+    title: "Dashboards & BI",
+    description: "Locker Studio, Data Studio y reporting en vivo para direcci\u00f3n.",
+    position: [0.6, -1.6, 0.9],
+  },
+  {
+    id: "qa",
+    title: "QA & Testing",
+    description: "Testing funcional, regresi\u00f3n y control de calidad previo al go-live.",
+    position: [-0.8, -1.8, -0.4],
+  },
+  {
+    id: "comms",
+    title: "Comms & Cultura",
+    description: "Gesti\u00f3n de stakeholders, eventos y storytelling interno.",
+    position: [1.9, 0.2, 0.1],
+  },
+  {
+    id: "lead",
+    title: "Liderazgo",
+    description: "Equipos de hasta 15 personas, capacitaci\u00f3n y cultura.",
+    position: [0, 0.4, 0.8],
+  },
+];
+
+export const projects = [
+  {
+    title: "AI Document Hub",
+    summary: "Motor de lectura inteligente para informes y contratos en CAT Technologies.",
+    stack: ["Next.js", "Node.js", "MongoDB", "OpenAI"],
+    link: "https://www.linkedin.com/in/jesusgilgonzalez/",
+    details:
+      "Implement\u00e9 un workflow que digitaliza documentos, ejecuta verificaciones autom\u00e1ticas y genera tableros personalizados para control de gesti\u00f3n.",
+  },
+  {
+    title: "Sales Automation Suite",
+    summary: "Ecosistema de automatizaci\u00f3n comercial para Cruz Roja Argentina.",
+    stack: ["React", "Firebase", "Airtable", "Apps Script"],
+    link: "https://www.linkedin.com/in/jesusgilgonzalez/",
+    details:
+      "Dise\u00f1\u00e9 pipelines de datos, dashboards operativos y reportes en tiempo real que conectan marketing digital con equipos de campo.",
+  },
+  {
+    title: "Engagement & Culture Ops",
+    summary: "Plataforma interna para comunicaci\u00f3n y RRSS en Atento (AR/UR).",
+    stack: ["Next.js", "Notion API", "Tailwind", "Vercel"],
+    link: "https://www.linkedin.com/in/jesusgilgonzalez/",
+    details:
+      "Centralic\u00e9 eventos, comunicados y seguimiento de stakeholders en un hub que redujo tiempos de coordinaci\u00f3n en 30%.",
+  },
+];
+
+export const socialLinks = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/jesusgilgonzalez/", icon: "IN" },
+  { label: "Email", href: "mailto:lagg312@gmail.com", icon: "@" },
+  { label: "WhatsApp", href: "https://wa.me/5491123861546", icon: "WA" },
+];
+
